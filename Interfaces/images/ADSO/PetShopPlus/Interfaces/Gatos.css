@@ -1,0 +1,153 @@
+.cabeceraweb {
+    height: 500px;
+}
+
+.grupo {
+    display: flex;
+    background-color: #268599;
+    height: 160px;
+    justify-content: flex-end;
+    min-width: 1440px;
+    font-family: verdana;
+}
+
+.logo-PetShopPlus {
+    height: 130px;
+    width: 158px;
+    position: absolute;
+    top: 34px;
+    left: 50px;
+    object-fit: cover;  
+}
+
+
+
+.quienes-somos {
+    -webkit-text-stroke: 1px;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 28px;
+    width: 176px;
+}
+
+.ofertas {
+    -webkit-text-stroke: 1px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 135px;
+    min-height: 28px;
+    width: 111px;
+}
+
+.productos-perros {
+    -webkit-text-stroke: 1px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 125px;
+    min-height: 28px;
+}
+
+.productos-gatos {
+    width: 208px;
+}
+
+.pet-shop-plus {
+    font-size: 50px;
+    color: #FFC28C;
+    position: absolute;
+    top: 55px;
+    left: 300px;
+    font-weight: bold;
+}
+
+.user {
+    height: 57px;
+    position: absolute;
+    left: 1400px;
+    top: 30px;
+    object-fit: cover;
+    width: 53px;
+}
+
+.iniciar-sesion {
+    color: #f5ede6;
+    line-height: normal;
+    position: absolute;
+    left: 1480px;
+    top: 35px;
+    width: 105px;
+}
+
+.cart {
+    height: 57px;
+    position: absolute;
+    left: 1600px;
+    top: 30px;
+    object-fit: cover;
+    width: 66px;
+}
+
+.carrito {
+    color: #f5ede6;
+    line-height: normal;
+    position: absolute;
+    left: 1680px;
+    top: 38px;
+    width: 105px;
+}
+
+/*barra navegacion*/
+
+.navbar {
+    
+    background-color: #e5a166;
+    border-radius: 10px 0px 0px 0px;
+    /*display: flex;*/
+    height: 50px;
+    position:absolute;
+    /*justify-content: flex-end;*/
+    width: 1100px;
+    top: 118px;
+    /*padding: 10px 65px;*/
+    /*align-items: stretch;*/
+}
+
+#lista-barra {
+    position: absolute;
+    left: 125px;
+  }
+  
+.barra {
+    font-size: 18px;
+    color: #000000;
+    display:inline;
+    padding-right: 4em;
+  }
+
+
+/*cards*/
+
+.vj-destacados .card img { /*imagenes de las cards*/
+    height: 400px;
+    object-fit:cover;
+}
+
+.vj-destacados .card { /*tamaño cards*/
+    height: 100%;
+}
+
+.vj-destacados .card .card-text { /*texto de las cards*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 5; /*lineas entes de la elipsis*/
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.vj-destacados .card .card-title { /*titulo de las cards*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: elipsis;
+}

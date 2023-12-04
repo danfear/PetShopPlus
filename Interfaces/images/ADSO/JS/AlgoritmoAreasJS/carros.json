@@ -1,0 +1,52 @@
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://localhost:27017';
+const dbName = 'autos_DB';
+
+MongoClient.connect(url, function(err, client) {
+    const db = client.db(dbName);
+
+const autos:[
+    { "placa": "HIT552",  
+        "numero_serie": "9FB187426",
+        "marca": "Honda",
+        "modelo": "Odyssey", 
+         "año": 2014,
+        "kilometraje": 99682, 
+        "tipo": "SUV"},
+    { "placa": "RML475",  
+        "numero_serie": "9FB115823",
+        "marca": "Toyota",
+        "modelo": "Prado", 
+         "año": 2016,
+        "kilometraje": 82500, 
+        "tipo": "SUV"},
+    { "placa": "WOD126",  
+        "numero_serie": "9FB654821",
+        "marca": "Renault",
+        "modelo": "Kangoo", 
+         "año": 2014,
+        "kilometraje": 161500, 
+        "tipo": "Van"},
+    { "placa": "WOD126",  
+        "numero_serie": "9FB654821",
+        "marca": "Renault",
+        "modelo": "Kangoo", 
+         "año": 2014,
+        "kilometraje": 161500, 
+        "tipo": "Van"},
+    { "placa": "BHD587",  
+        "numero_serie": "9FB964425",
+        "marca": "Toyota",
+        "modelo": "Corolla", 
+         "año": 2023,
+        "kilometraje": 117000, 
+        "tipo": "Sedan"}
+  ];
+
+  db.collection('carros').insertMany(carros, function(err, result) { 
+    if (err) throw err;  
+    console.log(`${result.insertedCount} carros insertados.`); 
+    client.close();  
+  });
+});
+
