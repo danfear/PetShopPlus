@@ -1,30 +1,49 @@
 <mat-toolbar color="primary">
-    <a
-      [routerLink]="'/'"
-      mat-icon-button class="material-symbols-outlined"
-      arial-label="Example icon-button with menu icon"
+  <a
+    [routerLink]="'/'"
+    mat-icon-button class="material-symbols-outlined"
+    arial-label="Example icon-button with menu icon"
     >
-      <mat-icon>pet_supplies</mat-icon>
-    </a>
-    <span>Pet Shop Plus</span>
-    <span class="example-spacer"></span>
-    <a
-      
-      [routerLink]="'/login'"
-      mat-icon-button
-      class = "example-icon favorite-icon mr140"
-      aria-label = "Example icon-button with heart icon"
+    <mat-icon>pets</mat-icon>
+  </a>
+  <span>Pet Shop Plus</span>
+  <span class="example-spacer"></span>
+  <a
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/login'"
+    mat-icon-button
+    class = "example-icon favorite-icon mr140"
+    aria-label = "Example icon-button with heart icon"
     >
-      Iniciar sesión
-    </a>
-    <a
-      
-      [routerLink]="'/signup'"
-      mat-icon-button
-      class="example-icon favorite-icon mr90"
-      aria-label="Example icon-button with heart icon"
+    Iniciar sesi&oacute;n
+  </a>
+  <a
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/signup'"
+    mat-icon-button
+    class="example-icon favorite-icon mr90"
+    aria-label="Example icon-button with heart icon"
     >
-      Registrarse
-    </a>
+    Registrarse
+  </a>
+  <a
+    *ngIf="login.isLoggedIn()"
+    (click) = "logout()"
+    style = "margin-right: 150px;"
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    >
+    Cerrar sesi&oacute;n
+  </a>
+  <button
+    *ngIf="login.isLoggedIn()"
+    mat-button
+    style = "margin-right: 10px;"
+    class="example-icon favorite-icon"
+    routerLink="/admin/profile"
+    aria-label="Example icon-button with heart icon">
+    {{login.getUser().username}}
+  </button>
     
-  </mat-toolbar>
+</mat-toolbar>

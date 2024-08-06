@@ -1,0 +1,20 @@
+<h1 style="text-align: center">Cat&aacute;logo de productos</h1>
+
+<div style="display:flex; flex-direction: row;">
+    <mat-card class="example-card" appearance="outlined" *ngFor = "let p of productos">
+        <mat-card-header>
+            <mat-card-title>{{ p.nombre }}</mat-card-title>
+            <mat-card-title>${{ p.precio }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="imagen" src="{{p.imagen}}" 
+        alt="https://cdn.icon-icons.com/icons2/1856/PNG/512/pets_117585.png"/>
+        <mat-card-content>
+            <p>{{ p.descripcion }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" 
+            class="ml20" style="text-align: center">Adicionar</button>
+          </mat-card-actions>
+      </mat-card>
+</div>
+

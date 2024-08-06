@@ -1,0 +1,84 @@
+<mat-card>
+    <h1>Agregar nuevo producto</h1>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form (ngSubmit)="guardarProducto()">
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input
+            [(ngModel)] = "productoData.nombre"
+            type="text"
+            name="nombre"
+            required
+            placeholder="Ingrese el nombre"
+            matInput>
+          </mat-form-field>
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Descripción</mat-label>
+            <textarea
+            [(ngModel)] = "productoData.descripcion"
+            type="text"
+            name="descripcion"
+            placeholder="Ingrese la descripción"
+            matInput
+            rows="8"></textarea>
+          </mat-form-field>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>N&uacute;mero de existencias</mat-label>
+                <input
+                [(ngModel)] = "productoData.existencias"
+                type="number"
+                name="existencias"
+                placeholder="Ingrese el n&uacute;mero de existencias"
+                matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Precio</mat-label>
+                <input
+                [(ngModel)] = "productoData.precio"
+                type="number"
+                name="precio"
+                placeholder="Inserte el precio"
+                matInput>
+              </mat-form-field>
+            </div>
+          </div>
+          <mat-slide-toggle class="mt20" name = "disponible" [(ngModel)] = "productoData.disponible" color="primary">
+            Disponible
+          </mat-slide-toggle>
+
+          <mat-form-field appearance="fill" class="mt20 w100">
+            <mat-label>Categorías</mat-label>
+            <mat-select name="categoria" [(ngModel)] = "productoData.categoria.categoriaId">
+              <mat-option *ngFor = "let c of categorias" [value] = "c.categoriaId">
+                {{ c.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          
+          <mat-form-field appearance="fill" class="w100">
+            <mat-label>Imagen del producto</mat-label>
+            <input
+            [(ngModel)] = "productoData.imagen"
+            type="text"
+            name="imagen"
+            placeholder="Inserte el enlace a la imagen del producto"
+            matInput>
+          </mat-form-field>
+          
+
+          <div class="container text-center">
+            <button mat-raised-button color="primary">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card>
+
+
