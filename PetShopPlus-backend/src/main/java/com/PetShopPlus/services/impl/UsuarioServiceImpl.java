@@ -2,6 +2,7 @@ package com.PetShopPlus.services.impl;
 
 import com.PetShopPlus.entities.Usuario;
 import com.PetShopPlus.entities.UsuarioRol;
+import com.PetShopPlus.exceptions.UsuarioFoundException;
 import com.PetShopPlus.repositories.RolRepository;
 import com.PetShopPlus.repositories.UsuarioRepository;
 import com.PetShopPlus.services.UsuarioService;
@@ -23,7 +24,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         Usuario usuarioLocal = usuarioRepository.findByUsername(usuario.getUsername());
         if (usuarioLocal != null) {
             System.out.println("El usuario ya existe");
-            throw new Exception("El usuario ya esta presente");
+            throw new UsuarioFoundException("El usuario ya esta presente");
         }
         else{
             for(UsuarioRol usuarioRol:usuarioRoles){
